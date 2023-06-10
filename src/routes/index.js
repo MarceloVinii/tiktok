@@ -6,6 +6,7 @@ import Search from "../pages/Search"
 import Inbox from "../pages/Inbox"
 import New from "../pages/New"
 import Profile from "../pages/Profile"
+import ButtonNew from "../components/ButtonNew"
 
 const Tab = createBottomTabNavigator()
 
@@ -50,11 +51,8 @@ export function Routes() {
         name="New"
         component={New}
         options={{
-          tabBarIcon: ({ focused, size, color }) => {
-            if (focused) {
-              return <Ionicons name="add" size={size} color={color} />
-            }
-            return <Ionicons name="add-outline" size={size} color={color} />
+          tabBarIcon: ({ size }) => {
+            return <ButtonNew size={size} />
           },
         }}
       />
